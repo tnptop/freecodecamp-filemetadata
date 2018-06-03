@@ -1,32 +1,38 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
-
-<!-- You might want to try something fancier: -->
-<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
-<!-- pug: https://pugjs.org/ -->
-<!-- haml: http://haml.info/ -->
-<!-- hbs(handlebars): http://handlebarsjs.com/ -->
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>File Metadata Microservice</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  </head>
-  <body>
-    <div class="container">
-       <h1 class="header">
-          API Basejump: File Metadata Microservice
-      </h1>
-      <blockquote>
-        User stories:
-        <ul>I can submit a FormData object that includes a file to upload.</ul>
-        <ul>When I submit something, I will receive the file size in bytes within the JSON response</ul>
-      </blockquote>
-      <h3>Submit a file below to view its filesize.</h3>
-      <form action="/get-file-size" method="post" enctype="multipart/form-data">
-        <input type="file" name="file"><input type="submit">
-      </form>
-    </div>
-  </body>
+<html>
+   <head>
+      <title>File Metadata</title>
+      <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link href="style.css" rel="stylesheet" type="text/css">
+   </head>
+   <body>
+      <div class="container">
+        <h2>API Project: File Metadata Microservice</h2>
+        <h3>User Stories:</h3>
+        <ol>
+          <li>I can submit a form object that includes a file upload.</li>
+          <li>The from file input field  has the "name" attribute set to "upfile". We rely on this in testing.</li>
+          <li>When I submit something, I will receive the file name, and size in bytes within the JSON response.</li>
+        </ol>
+
+        <h3>Usage:</h3>
+        <p>
+          Please Upload a File ...
+        </p>
+        <div class="view">
+          <h4 id="output"></h4>
+          <form enctype="multipart/form-data" method="POST" action="/api/fileanalyse">
+            <input id="inputfield" type="file" name="upfile">
+            <input id="button" type="submit" value="Upload">
+          </form>
+        </div>
+      </div>
+      <div class="footer">
+        <p>
+          Instruction by <a href="http://www.freecodecamp.com/">freeCodeCamp</a><br/>
+          Implemented by <a href="https://github.com/tnptop/">@tnptop</a>
+        </p>
+      </div>
+   </body>
 </html>
